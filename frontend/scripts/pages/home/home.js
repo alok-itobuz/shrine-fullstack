@@ -64,7 +64,7 @@ export default (state) => {
     );
   });
   btnEventRight?.addEventListener("click", () => {
-    if (currentEventCarousel === events.length - 1) return;
+    if (currentEventCarousel === state.events.length - 1) return;
     currentEventCarousel++;
     carouselHandler(
       currentEventCarousel,

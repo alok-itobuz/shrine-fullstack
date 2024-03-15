@@ -1,4 +1,4 @@
-import { sectionHeading } from "../../helpers.js";
+import { sectionHeading } from "../../../components/main.js";
 
 export default (sectionData) => {
     const { images, headingPrimary, descriptionPrimary, descriptionSecondary } = sectionData;

@@ -1,4 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto+Serif:ital,opsz,wght@0,8..144,100..900;1,8..144,100..900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto+Serif:ital,opsz,wght@0,8..144,100..900;1,8..144,100..900&display=swap");
 * {
   margin: 0;
   padding: 0;
@@ -33,6 +34,7 @@ img.object-center {
 }
 
 .fs-small {
+  color: #747A82;
   font-size: 0.5rem;
 }
 @media (min-width: 400px) {
@@ -166,15 +168,6 @@ img.object-center {
 .shrine-card-wrapper {
   aspect-ratio: 3/4;
 }
-.shrine-card-wrapper.col-6 {
-  min-width: 50% !important;
-}
-.shrine-card-wrapper.col-sm-4 {
-  min-width: 33.33333333% !important;
-}
-.shrine-card-wrapper.col-md-3 {
-  min-width: 25% !important;
-}
 
 .shrine-card {
   background: #ffe6e0;
@@ -195,6 +188,11 @@ img.object-center {
   aspect-ratio: 1/1;
 }
 
+.section-heading {
+  border-left: 3px solid #c0304f;
+  padding-left: 1rem !important;
+}
+
 .heading-container .section-heading {
   min-width: -moz-fit-content;
   min-width: fit-content;
@@ -206,4 +204,37 @@ img.object-center {
 .rectangle-circle {
   aspect-ratio: 5/6;
   border-radius: 45%;
+}
+
+.checkpoints .wrapper .checkbox {
+  height: 1rem !important;
+  aspect-ratio: 1/1 !important;
+  border: 1px solid black !important;
+}
+@media (min-width: 768px) {
+  .checkpoints .wrapper .checkbox {
+    height: 1.5rem !important;
+  }
+}
+
+.bg-white-nav {
+  background-color: #fff;
+}
+.bg-white-nav .navbar-brand {
+  background-color: #fff;
+}
+
+.bg-yellowish {
+  background-color: #f6f2eb !important;
+}
+.bg-yellowish .navbar-brand {
+  background-color: #f6f2eb !important;
+}
+
+.bg-pink-orange {
+  background-color: #FFE6E0 !important;
+}
+
+.text-pink-orange {
+  color: #FFE6E0 !important;
 }/*# sourceMappingURL=common.css.map */

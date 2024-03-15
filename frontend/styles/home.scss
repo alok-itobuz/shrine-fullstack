@@ -1,10 +1,5 @@
 @use "./colors.scss" as color;
 
-// common
-.section-heading {
-  border-left: 3px solid color.$red_color;
-  padding-left: 1rem !important;
-}
 
 // Hero Section
 #hero {
@@ -19,56 +14,93 @@
   .btn-circle {
     right: 5%;
     bottom: 5%;
+    background-size: 30%;
+    background-position: center;
+    background-repeat: no-repeat;
+    overflow: hidden;
+
+    &.btn-arrow {
+      background-image: url(../images/hero/arrow.svg);
+    }
+
+    &.btn-video {
+      background-image: url(../images/hero/triangle.svg);
+      background-color: #C0304F;
+    }
+  }
+
+  .btn-hero-donation {
+    height: 3rem;
+    width: unset;
+    aspect-ratio: 1/1;
+    background-image: url(../images/hero/hero_donate.svg);
+    background-size: 100%;
+    background-position: center;
   }
 
   @media (min-width: 768px) {
-    .row:first-child {
-      aspect-ratio: 10/7;
+    >.container>.row {
+      &:first-child {
+        aspect-ratio: 10/7;
 
-      >div {
-        height: 100% !important;
+        >div {
+          height: 100% !important;
 
-        >div.energy-body-wrapper {
-          height: 50% !important;
+          >div.energy-body-wrapper {
+            height: 50% !important;
 
-          .semi-circle {
-            height: 100% !important;
-            width: 100% !important;
+            .semi-circle {
+              height: 100% !important;
+              width: 100% !important;
 
-            .image-container {
-              max-width: 10rem;
+              .image-container {
+                max-width: 10rem;
 
-              img {
-                width: 100%;
+                img {
+                  width: 100%;
+                }
               }
             }
           }
         }
+
+        .jesus-image-container {
+          height: 100% !important;
+          position: relative !important;
+          transform: unset;
+          top: unset;
+          opacity: 1;
+          z-index: 3;
+
+          img {
+            position: absolute;
+            height: 100% !important;
+            width: 130% !important;
+            object-fit: cover !important;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 10;
+          }
+
+          .semi-circle {
+            height: 60% !important;
+          }
+        }
       }
 
-      .jesus-image-container {
-        height: 100% !important;
-        position: relative !important;
-        transform: unset;
-        top: unset;
-        opacity: 1;
-        z-index: 3;
+      &:last-child {
+        padding-top: 4rem !important;
 
-        img {
-          position: absolute;
-          height: 100% !important;
-          width: 130% !important;
-          object-fit: cover !important;
-          left: 50%;
-          transform: translateX(-50%);
-          z-index: 10;
-        }
-
-        .semi-circle {
-          height: 60% !important;
+        .btn-hero-donation {
+          height: 8rem;
+          right: 50% !important;
+          transform: translateX(50%);
+          top: -4rem !important;
+          z-index: 20;
         }
       }
     }
+
   }
 }
 
@@ -167,15 +199,6 @@
 // grow section
 #grow>.row {
   >.text-container {
-    .checkpoints .wrapper .checkbox {
-      height: 1rem;
-      aspect-ratio: 1/1;
-      border: 1px solid black;
-
-      @media (min-width: 768px) {
-        height: 1.5rem;
-      }
-    }
 
     >.btn-image-container .image-container {
       width: 40%;

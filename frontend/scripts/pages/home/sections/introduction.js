@@ -1,5 +1,5 @@
 import { circularImageJoined, introCardsGenerator, introImage } from "../../../components/home.js";
-import { sectionHeading } from "../../helpers.js";
+import { sectionHeading } from "../../../components/main.js";
 
 
 export default (sectionData) => {

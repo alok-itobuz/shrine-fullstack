@@ -1,7 +1,6 @@
 @use "./colors.scss" as color;
 
 .navbar-container {
-  background: #f6f2eb;
 
   nav {
 
@@ -51,7 +50,6 @@
       border-bottom: 2px solid color.$dark_white_color;
 
       .navbar-brand {
-        background: #f6f2eb;
         position: absolute;
         top: 1.3rem;
         left: 50%;

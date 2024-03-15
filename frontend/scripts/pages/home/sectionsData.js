@@ -80,25 +80,29 @@ export const satisfactionSectionData = {
       url: "./images/satisfaction/churches.svg",
       alt: "churches",
       title: "Our Churches",
-      description: "A long established fact that a reade."
+      description: "A long established fact that a reade.",
+      btnContent: 'Read More'
     },
     {
       url: "./images/satisfaction/churches.svg",
       alt: "churches",
       title: "Our Worships",
-      description: "A long established fact that a reade."
+      description: "A long established fact that a reade.",
+      btnContent: 'Read More'
     },
     {
       url: "./images/satisfaction/churches.svg",
       alt: "churches",
       title: "Our Councelling",
-      description: "A long established fact that a reade."
+      description: "A long established fact that a reade.",
+      btnContent: 'Read More'
     },
     {
       url: "./images/satisfaction/churches.svg",
       alt: "churches",
       title: "Our Meets",
-      description: "A long established fact that a reade."
+      description: "A long established fact that a reade.",
+      btnContent: 'Read More'
     },
   ]
 }

@@ -1,6 +1,8 @@
 import { API_URL } from "./constants.js";
+import { appendStyle } from "./helpers.js";
 import loadAboutPage from "./pages/about/about.js";
 import loadHomePage from "./pages/home/home.js";
+import { loadPagesPage } from "./pages/index.js";
 import state, { fetchAndStore } from './states.js'
 
 // fetch and update the state
@@ -11,16 +13,21 @@ import state, { fetchAndStore } from './states.js'
   loadSectionData()
 })()
 
+const navContainer = document.querySelector('.navbar-container')
 
 function loadSectionData(e) {
   e?.preventDefault()
 
+  navContainer.classList.remove('bg-yellowish')
   switch (window.location.hash.slice(1)) {
     case "":
+      navContainer.classList.add('bg-yellowish')
+      appendStyle('home.css')
       loadHomePage(state);
       break;
-    case 'about':
-      loadAboutPage()
+    case 'pages':
+      appendStyle('pages.css')
+      loadPagesPage(state)
       break;
   }
 }

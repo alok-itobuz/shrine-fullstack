@@ -1,3 +1,5 @@
+import { shrineCardGenerator } from './main.js'
+
 // Introduction section
 export const introCardsGenerator = ({ heading, paragraph, url, alt }) => {
     return `
@@ -19,41 +21,22 @@ export const introCardsGenerator = ({ heading, paragraph, url, alt }) => {
 
 export const introImage = ({ url, alt }) => `
     <div class="image rounded-3 overflow-hidden">
-        <img src=${url} alt=${alt ?? "alternate alt"
-    } class="rounded-3 object-fit-cover h-100 w-100 object-center">
+        <img src=${url} alt=${alt} class="rounded-3 object-fit-cover h-100 w-100 object-center">
     </div>
 `;
 
 export const circularImageJoined = ({ url, alt }) => `
     <div class="image-div h-50 position-relative ">
         <div class="image-container position-absolute start-50 top-50 rounded-circle translate-middle overflow-hidden">
-        <img src=${url} alt=${alt ?? "alternate alt"
-    } class="rounded-3 object-fit-cover h-100 w-100 object-center">
+        <img src=${url} alt=${alt} class="rounded-3 object-fit-cover h-100 w-100 object-center">
         </div>
     </div>
 `;
 
 // satisfaction section
-export const satisfactionCardGenerator = ({ url, alt, title, description }) => `
+export const satisfactionCardGenerator = (data) => `
     <div class="satisfaction-card-wrapper shrine-card-wrapper col-6 col-sm-4 col-md-3 p-2">
-        <div class="satisfaction-card h-100 w-100 p-2 p-md-3 shrine-card d-flex flex-column gap-3 justify-content-center align-items-center">
-            <div class="image-container h-25">
-                <img src=${url} alt=${alt} class="h-100 w-100 object-fit-cover object-center">
-            </div>
-            <h3 class="fs-large m-0 text-capitalize font-roboto fw-semibold">${title}</h3>
-            <span class="fs-small text-center">${description}</span>
-            <button class="fs-small text-uppercase btn-square d-flex align-items-center justify-content-center border-0 bg-transparent gap-2">
-                <span class="text-content">read more</span> 
-                <span class="btm-arrow rounded-circle d-flex align-items-center justify-content-center bg-danger text-white h-100">&gt;</span>
-            </button>
-        </div>
-    </div>
-`
-// grow section
-export const createCheckPoints = (content) => `
-    <div class="wrapper d-flex align-items-center gap-2">
-        <span class="checkbox rounded-circle d-flex align-items-center justify-content-center fs-medium">&check;</span>
-        <span class="fs-small flex-grow-1">${content}</span>
+        ${shrineCardGenerator(data)}
     </div>
 `
 

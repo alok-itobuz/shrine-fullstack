@@ -1,12 +1,12 @@
 import { eventCardsGenerator } from "../../../components/home.js";
-import { sectionHeading } from "../../helpers.js";
+import { sectionHeading } from "../../../components/main.js";
 
 export default (sectionData, events) => {
     const { headingPrimary, descriptionPrimary } = sectionData
     return `
     <section id="events" class="container py-5">
         ${sectionHeading(headingPrimary, descriptionPrimary)}
-        <div class="carousel-container w-100 overflow-x-scroll   mt-4 mt-lg-5">
+        <div class="carousel-container w-100 overflow-x-hidden   mt-4 mt-lg-5">
             <div class="row m-0 p-0 carousel-wrapper flex-nowrap">
                 ${events?.map(eventCardsGenerator).join("")}
             </div>

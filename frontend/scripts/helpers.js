@@ -1,4 +1,6 @@
 export const appendStyle = (sheetName) => {
+  const lastLink = document.head.childNodes[document.head.childNodes.length - 1]
+  lastLink.remove()
   const link = `<link rel="stylesheet" href="./styles/${sheetName}">`;
   document.head.insertAdjacentHTML("beforeend", link);
 };

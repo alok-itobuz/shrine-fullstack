@@ -1,7 +1,50 @@
+@use "./colors.scss" as color;
 //Font Url
 @import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto+Serif:ital,opsz,wght@0,8..144,100..900;1,8..144,100..900&display=swap");
 $font_poppins: "Poppins", sans-serif;
 $font-roboto: "Roboto Serif", serif;
+
+@mixin fs-small {
+  color: #747A82;
+  font-size: 0.5rem;
+
+  @media (min-width: 400px) {
+    font-size: 0.7rem;
+  }
+
+  @media (min-width: 768px) {
+    font-size: 0.8rem !important;
+  }
+
+  @media (min-width: 992px) {
+    font-size: 0.9rem !important;
+  }
+}
+
+@mixin fs-medium {
+  font-size: 0.6rem;
+
+  @media (min-width: 400px) {
+    font-size: 0.8rem;
+  }
+
+  @media (min-width: 992px) {
+    font-size: 1.2rem !important;
+  }
+}
+
+@mixin fs-large {
+  font-size: 1rem;
+
+  @media (min-width: 768px) {
+    font-size: 0.9rem;
+  }
+
+  @media (min-width: 992px) {
+    font-size: 1.4rem !important;
+  }
+}
+
 
 * {
   margin: 0;
@@ -36,44 +79,17 @@ img.object-center {
   object-fit: cover !important;
 }
 
+
 .fs-small {
-  font-size: 0.5rem;
-
-  @media (min-width: 400px) {
-    font-size: 0.7rem;
-  }
-
-  @media (min-width: 768px) {
-    font-size: 0.8rem !important;
-  }
-
-  @media (min-width: 992px) {
-    font-size: 0.9rem !important;
-  }
+  @include fs-small();
 }
 
 .fs-medium {
-  font-size: 0.6rem;
-
-  @media (min-width: 400px) {
-    font-size: 0.8rem;
-  }
-
-  @media (min-width: 992px) {
-    font-size: 1.2rem !important;
-  }
+  @include fs-medium();
 }
 
 .fs-large {
-  font-size: 1rem;
-
-  @media (min-width: 768px) {
-    font-size: 0.9rem;
-  }
-
-  @media (min-width: 992px) {
-    font-size: 1.4rem !important;
-  }
+  @include fs-large();
 }
 
 .fs-xl {
@@ -159,17 +175,17 @@ img.object-center {
 .shrine-card-wrapper {
   aspect-ratio: 3/4;
 
-  &.col-6 {
-    min-width: 50% !important;
-  }
+  // &.col-6 {
+  //   min-width: 50% !important;
+  // }
 
-  &.col-sm-4 {
-    min-width: 33.33333333% !important;
-  }
+  // &.col-sm-4 {
+  //   min-width: 33.33333333% !important;
+  // }
 
-  &.col-md-3 {
-    min-width: 25% !important;
-  }
+  // &.col-md-3 {
+  //   min-width: 25% !important;
+  // }
 }
 
 .shrine-card {
@@ -200,6 +216,11 @@ img.object-center {
   }
 }
 
+.section-heading {
+  border-left: 3px solid color.$red_color;
+  padding-left: 1rem !important;
+}
+
 .heading-container {
   .section-heading {
     min-width: fit-content;
@@ -213,4 +234,38 @@ img.object-center {
 .rectangle-circle {
   aspect-ratio: 5 / 6;
   border-radius: 45%;
+}
+
+.checkpoints .wrapper .checkbox {
+  height: 1rem !important;
+  aspect-ratio: 1/1 !important;
+  border: 1px solid black !important;
+
+  @media (min-width: 768px) {
+    height: 1.5rem !important;
+  }
+}
+
+.bg-white-nav {
+  background-color: #fff;
+
+  .navbar-brand {
+    background-color: #fff;
+  }
+}
+
+.bg-yellowish {
+  background-color: #f6f2eb !important;
+
+  .navbar-brand {
+    background-color: #f6f2eb !important;
+  }
+}
+
+.bg-pink-orange {
+  background-color: #FFE6E0 !important;
+}
+
+.text-pink-orange {
+  color: #FFE6E0 !important;
 }

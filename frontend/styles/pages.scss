@@ -1,0 +1,49 @@
+#vision {
+    .shrine-card-wrapper {
+        max-width: 13rem;
+
+        .shrine-card {
+            border-radius: .2rem !important;
+        }
+
+        @media (min-width: 576px) {
+            max-width: 18rem;
+        }
+    }
+}
+
+.row>* {
+    margin: 0;
+}
+
+#aboutus {
+    .card-wrapper {
+        aspect-ratio: 5/2;
+        max-width: 22rem;
+
+        >span {
+            font-size: 4.5rem;
+            line-height: .87;
+            z-index: -1;
+
+
+            @media (min-width: 576px) {
+                font-size: 5.5rem;
+            }
+
+            @media (min-width: 768px) {
+                top: -1rem !important;
+                left: -.4rem !important;
+                font-size: 5rem;
+            }
+
+            @media (min-width: 992px) {
+                font-size: 5.5rem;
+            }
+        }
+
+        // @media (min-width: 768px) {
+        //     aspect-ratio: 7/3;
+        // }
+    }
+}

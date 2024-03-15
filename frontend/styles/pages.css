@@ -1,0 +1,42 @@
+#vision .shrine-card-wrapper {
+  max-width: 13rem;
+}
+#vision .shrine-card-wrapper .shrine-card {
+  border-radius: 0.2rem !important;
+}
+@media (min-width: 576px) {
+  #vision .shrine-card-wrapper {
+    max-width: 18rem;
+  }
+}
+
+.row > * {
+  margin: 0;
+}
+
+#aboutus .card-wrapper {
+  aspect-ratio: 5/2;
+  max-width: 22rem;
+}
+#aboutus .card-wrapper > span {
+  font-size: 4.5rem;
+  line-height: 0.87;
+  z-index: -1;
+}
+@media (min-width: 576px) {
+  #aboutus .card-wrapper > span {
+    font-size: 5.5rem;
+  }
+}
+@media (min-width: 768px) {
+  #aboutus .card-wrapper > span {
+    top: -1rem !important;
+    left: -0.4rem !important;
+    font-size: 5rem;
+  }
+}
+@media (min-width: 992px) {
+  #aboutus .card-wrapper > span {
+    font-size: 5.5rem;
+  }
+}/*# sourceMappingURL=pages.css.map */

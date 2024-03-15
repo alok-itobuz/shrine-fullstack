@@ -1,4 +1,4 @@
-import { createCheckPoints } from "../../../components/home.js";
+import { createCheckPoints } from "../../../components/main.js";
 
 export default (sectionData) => {
     const { headingPrimary, descriptionPrimary, checkPoints, images } = sectionData
