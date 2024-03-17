@@ -40,6 +40,10 @@ body {
   font-family: "Roboto Serif", serif !important;
 }
 
+.font-poppins {
+  font-family: "Poppins", sans-serif !important;
+}
+
 img.h-100 {
   height: 100% !important;
 }
@@ -321,5 +325,33 @@ img.object-center {
     max-width: unset;
     aspect-ratio: 6/7;
     height: 70% !important;
+  }
+}
+
+.wide-carousel.carousel-btn-container {
+  aspect-ratio: 5/2;
+}
+.wide-carousel.carousel-btn-container .carousel-container {
+  width: 95% !important;
+  background: #00a;
+}
+.wide-carousel.carousel-btn-container .carousel-container::-webkit-scrollbar {
+  display: none;
+}
+.wide-carousel.carousel-btn-container .carousel-container .carousel-wrapper {
+  min-width: -moz-fit-content;
+  min-width: fit-content;
+  transition: all 0.3s ease;
+}
+.wide-carousel.carousel-btn-container .buttons-container {
+  width: 10%;
+}
+.wide-carousel.carousel-btn-container .buttons-container button {
+  aspect-ratio: 1/1;
+  height: 2rem;
+}
+@media (min-width: 992px) {
+  .wide-carousel.carousel-btn-container .buttons-container button {
+    height: 3rem;
   }
 }/*# sourceMappingURL=common.css.map */

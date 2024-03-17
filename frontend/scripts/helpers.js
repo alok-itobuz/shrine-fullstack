@@ -17,3 +17,8 @@ export const toastGenerator = (image, heading, message) => `
     </div>
   </div>
 `
+
+export const clearMain = () => {
+  const main = document.querySelector("main");
+  main.innerHTML = "";
+}

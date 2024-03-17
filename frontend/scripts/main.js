@@ -1,6 +1,6 @@
 import { API_URL } from "./constants.js";
 import { appendStyle } from "./helpers.js";
-import { loadHomePage, loadPagesFaq, loadPagesPage } from "./pages/index.js";
+import { loadHomePage, loadPagesFaq, loadPagesGallery, loadPagesMember, loadPagesPage } from "./pages/index.js";
 import state, { fetchAndStore } from './states.js'
 
 // fetch and update the state
@@ -19,6 +19,9 @@ function loadSectionData(e) {
   e?.preventDefault()
 
   navContainer.classList.remove('bg-yellowish')
+
+  const main = document.querySelector("main");
+  main.innerHTML = "";
   switch (window.location.hash.slice(1)) {
     case "":
       navContainer.classList.add('bg-yellowish')
@@ -33,6 +36,14 @@ function loadSectionData(e) {
     case 'pages/faq':
       appendStyle('pagesFaq.css')
       loadPagesFaq(state)
+      break;
+    case 'pages/gallery':
+      appendStyle('pagesFaq.css')
+      loadPagesGallery(state)
+      break;
+    case 'pages/members':
+      appendStyle('pagesFaq.css')
+      loadPagesMember(state)
       break;
   }
 }

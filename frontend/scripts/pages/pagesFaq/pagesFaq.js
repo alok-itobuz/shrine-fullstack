@@ -4,7 +4,6 @@ import { wideCarouselFunctionality } from "../helpers.js";
 
 export default (state) => {
     const main = document.querySelector("main");
-    main.innerHTML = "";
 
     const elementArray = [
         heroCarouselSection(heroSectionData),
