@@ -5,7 +5,7 @@ $font_poppins: "Poppins", sans-serif;
 $font-roboto: "Roboto Serif", serif;
 
 @mixin fs-small {
-  color: #747A82;
+  color: #747a82;
   font-size: 0.5rem;
 
   @media (min-width: 400px) {
@@ -45,7 +45,6 @@ $font-roboto: "Roboto Serif", serif;
   }
 }
 
-
 * {
   margin: 0;
   padding: 0;
@@ -57,6 +56,31 @@ body {
   font-family: $font_poppins;
   overflow-x: hidden;
 }
+
+// breadcrump
+.breadcrumb-container {
+  @media (min-width: 992px) {
+    position: absolute !important;
+    transform: translateX(-50%);
+  }
+}
+.dropdown-toggle {
+  &::after {
+    display: none !important;
+  }
+}
+.dropdown:hover > .dropdown-menu {
+  display: block;
+  margin-top: 7rem;
+  @media (min-width: 992px) {
+    margin-top: 8rem;
+  }
+}
+
+.dropdown > .dropdown-toggle:active {
+  pointer-events: none;
+}
+//---
 
 // generic classes
 .font-roboto {
@@ -78,7 +102,6 @@ img.object-center {
 .object-cover {
   object-fit: cover !important;
 }
-
 
 .fs-small {
   @include fs-small();
@@ -134,7 +157,7 @@ img.object-center {
 .message-border {
   border: 1px dotted black;
 
-  >span {
+  > span {
     height: 0.8rem;
     aspect-ratio: 1/1;
     border: 1px dotted black;
@@ -146,8 +169,8 @@ img.object-center {
   }
 }
 
-.section-text-image>.row {
-  >.small-div {
+.section-text-image > .row {
+  > .small-div {
     aspect-ratio: 1/1;
     max-width: 23rem;
 
@@ -156,7 +179,7 @@ img.object-center {
     }
   }
 
-  >.large-div {
+  > .large-div {
     max-width: 23rem;
 
     @media (min-width: 576px) {
@@ -174,26 +197,15 @@ img.object-center {
 
 .shrine-card-wrapper {
   aspect-ratio: 3/4;
-
-  // &.col-6 {
-  //   min-width: 50% !important;
-  // }
-
-  // &.col-sm-4 {
-  //   min-width: 33.33333333% !important;
-  // }
-
-  // &.col-md-3 {
-  //   min-width: 25% !important;
-  // }
 }
 
+// generic class for shrine card
 .shrine-card {
   background: #ffe6e0;
   border-radius: 10% 10% 10% 0;
 
   &:hover {
-    button>span:first-child {
+    button > span:first-child {
       display: block;
     }
   }
@@ -226,7 +238,7 @@ img.object-center {
     min-width: fit-content;
   }
 
-  >span {
+  > span.mw {
     max-width: 30rem;
   }
 }
@@ -263,9 +275,85 @@ img.object-center {
 }
 
 .bg-pink-orange {
-  background-color: #FFE6E0 !important;
+  background-color: #ffe6e0 !important;
+}
+
+.bg-deep-pink {
+  background: #c0304f;
 }
 
 .text-pink-orange {
-  color: #FFE6E0 !important;
+  color: #ffe6e0 !important;
+}
+
+.aspect-5-7 {
+  aspect-ratio: 5/7;
+}
+
+.aspect-1-1 {
+  aspect-ratio: 1/1 !important;
+}
+
+// generic class for members card component
+.members-card-wrapper {
+  aspect-ratio: 5/3;
+  max-width: 20rem;
+
+  .card {
+    .image-container {
+      width: unset;
+      max-width: 45%;
+    }
+
+    .text-container {
+      .round-icon-container {
+        height: 1.5rem;
+        aspect-ratio: 1/1;
+        border: 1px solid rgb(0, 0, 0);
+      }
+    }
+
+    .social-icons-container {
+      visibility: hidden;
+      a {
+        height: 1rem;
+        aspect-ratio: 1/1;
+      }
+    }
+
+    &:hover {
+      .text-container .round-icon-container {
+        border: none !important;
+        background: #c0304f;
+        img {
+          filter: brightness(0) saturate(100%) invert(100%) sepia(0%)
+            saturate(7426%) hue-rotate(74deg) brightness(110%) contrast(91%);
+        }
+      }
+      .social-icons-container {
+        visibility: visible;
+      }
+    }
+  }
+
+  @media (min-width: 992px) {
+    aspect-ratio: 5/8;
+
+    .card {
+      .text-container .divider {
+        width: 1px;
+        background: black;
+      }
+
+      .social-icons-container a {
+        height: 1.3rem !important;
+      }
+
+      .image-container {
+        max-width: unset;
+        aspect-ratio: 6/7;
+        height: 70% !important;
+      }
+    }
+  }
 }

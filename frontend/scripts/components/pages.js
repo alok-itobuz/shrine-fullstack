@@ -12,7 +12,7 @@ export const statsCardsGenerator = ({ title, description }) => `
 // vision section
 export const visionCardGenerator = (data) => `
     <div class="shrine-card-wrapper col-6 col-sm-4 p-2 ps-md-1 p-md-4 text-center">
-        ${shrineCardGenerator(data)}
+    ${shrineCardGenerator(data, true)}
     </div>
 `
 

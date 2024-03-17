@@ -6,7 +6,7 @@ export const createCheckPoints = (content) => `
     </div>
 `
 
-export const sectionHeading = (heading, description = null) => {
+export const sectionHeading = (heading, description = null, flexDirection = "row", mt = 0) => {
     heading = heading.trim();
     description && (description = description.trim());
 
@@ -28,11 +28,11 @@ export const sectionHeading = (heading, description = null) => {
     return `
     ${!!description
             ? `
-    <div class="heading-container d-flex flex-column flex-sm-row align-items-sm-center justify-content-between gap-3 gap-sm-5">
+    <div class="heading-container d-flex flex-column flex-sm-${flexDirection} ${flexDirection === 'row' ? 'align-items-sm-center' : ''} justify-content-between gap-3 gap-sm-5 mt-${mt}">
         <h2 class="section-heading fs-xl font-roboto flex-sm-grow-1 m-0">
             ${heading}
         </h2>
-        <span class="fs-small">
+        <span class="fs-small ${flexDirection === 'row' ? 'mw' : ''}">
             ${description}
         </span>
     </div>`
@@ -43,10 +43,10 @@ export const sectionHeading = (heading, description = null) => {
     `;
 };
 
-export const shrineCardGenerator = ({ url, alt, title, description, btnContent }) => `
+export const shrineCardGenerator = ({ url, alt, title, description, btnContent }, imgRunded = false) => `
     <div class="h-100 w-100 p-2 p-md-3 shrine-card d-flex flex-column gap-3 justify-content-center align-items-center">
-        <div class="image-container h-25">
-            <img src=${url} alt=${alt} class="h-100 w-100 object-fit-cover object-center">
+        <div class="image-container h-25 d-flex align-items-center justify-content-center ${imgRunded ? 'rounded-circle bg-white' : ''}">
+            <img src=${url} alt=${alt} class="h-${imgRunded ? 50 : 100} w-${imgRunded ? 50 : 100} object-fit-cover object-center">
         </div>
         <h3 class="fs-large m-0 text-capitalize font-roboto fw-semibold">${title}</h3>
         <span class="fs-small text-center">${description}</span>
@@ -56,5 +56,61 @@ export const shrineCardGenerator = ({ url, alt, title, description, btnContent }
                 <span class="btm-arrow rounded-circle d-flex align-items-center justify-content-center bg-danger text-white h-100">&gt;</span>
             </button>` : ''
     }
+    </div>
+`
+
+
+export const membersCardGenerator = ({ name, description, image, socialLinks: { instagram, google, youtube } }, aspectRatio) => `
+    <div class="members-card-wrapper col-12 col-sm-6 col-lg-3 p-2 p-lg-1">
+        <div class="card h-100 w-100 d-flex flex-row flex-lg-column align-items-lg-center border-0 p-2 gap-2">
+            <div class="image-container rectangle-circle aspect-${aspectRatio} h-100 overflow-hidden">
+                <img src=${image} alt=${name} class="h-100 w-100 object-fit-cover object-center">
+            </div>
+            <div class="text-container d-flex flex-column flex-lg-row align-items-start align-items-lg-center justify-content-center justify-content-lg-start gap-2 mt-lg-2">
+                <button class="round-icon-container rounded-circle overflow-hidden d-flex align-items-center justify-content-center">
+                    <img src="./images/members/share_icon.svg" alt="" class="h-50 w-50 object-fit-contain object-center">
+                </button>
+                <span class="divider d-none d-lg-block h-75"></span>
+                <div class="text d-flex flex-column justify-content-between gap-2">
+                    <h4 class="m-0 fs-large font-roboto">${name}</h4>
+                    <span class="fs-small">${description}</span>
+                </div>
+            </div>
+            <div class="social-icons-container d-flex flex-column justify-content-center justify-content-center flex-lg-row gap-2">
+                <a class="icon overflow-hidden" href=${instagram}>
+                    <img src="./images/members/instagram.svg" class="h-100 w-100 object-fit-contain object-center d-flex align-items-center justify-content-center " alt="instagram">
+                </a>
+                <a class="icon overflow-hidden" href=${google}>
+                    <img src="./images/members/google.svg" class="h-100 w-100 object-fit-contain object-center d-flex align-items-center justify-content-center " alt="google">
+                </a>
+                <a class="icon overflow-hidden" href=${youtube}>
+                    <img src="./images/members/youtube.svg" class="h-100 w-100 object-fit-contain object-center d-flex align-items-center justify-content-center " alt="youtube">
+                </a>
+            </div>
+        </div>
+    </div>
+`
+
+export const blackWhiteCardTextsGenerator = (name, description, btnContent) => `
+    <h3 class="fw-semibold fs-large m-0 font-roboto">${name}</h3>
+    <p class="m-0 fs-small">${description}</p>
+    <button class="m-0 p-0 rounded-2 text-uppercase fs-small px-3 py-2 border-0 text-white  hover-cuursor-pointer  btn-square mt-sm-2">${btnContent}</button>
+`
+
+export const wideCarouselGenerator = (images) => `
+    <div class="wide-carousel carousel-btn-container position-relative">
+        <div class="carousel-container h-100 rounded-2 overflow-hidden">
+            <div class="carousel-wrapper h-100 row m-0 p-0 flex-nowrap">
+                ${images.map(image => `
+                    <div class="image-container col-12 m-0 p-0">
+                        <img src=${image.url} alt=${image.alt} class="h-100 w-100 object-fit-cover bg-white"/>
+                    </div>
+                `).join("")}
+            </div>
+        </div>
+        <div class="buttons-container d-flex flex-column align-items-center justify-content-center gap-0 position-absolute end-0 top-50 translate-middle-y">
+            <button class="btn-prev border-0 bg-deep-pink text-white">&lt;</button>
+            <button class="btn-next border-0 bg-black text-white">&gt;</button>
+        </div>
     </div>
 `

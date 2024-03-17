@@ -1,4 +1,4 @@
-import { config } from "dotenv";
+import { config } from "dotenv"
 config()
 
 const { PORT, DATABASE_URL, DATABASE_PASSWORD, ETHEREAL_NAME, ETHEREAL_USERNAME, ETHEREAL_PASSWORD } = process.env

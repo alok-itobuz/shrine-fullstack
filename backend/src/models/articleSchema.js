@@ -9,10 +9,9 @@ const articleSchema = mongoose.Schema({
         type: String,
         required: true
     },
-    featured: Boolean,
-    // publisher: {
-    //     type: mongoose.Schema.Types.ObjectId,
-    // },
+    publisher: {
+        type: mongoose.Schema.Types.ObjectId,
+    },
     image: {
         type: String,
         required: true
@@ -28,5 +27,4 @@ const articleSchema = mongoose.Schema({
 })
 
 const Article = mongoose.model('Article', articleSchema)
-
 export default Article

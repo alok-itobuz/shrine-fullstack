@@ -20,7 +20,7 @@
 }
 #hero .btn-circle.btn-video {
   background-image: url(../images/hero/triangle.svg);
-  background-color: #C0304F;
+  background-color: #c0304f;
 }
 #hero .btn-hero-donation {
   height: 3rem;
@@ -163,45 +163,6 @@
   }
 }
 
-#members .cards-container .card-wrapper {
-  aspect-ratio: 5/3;
-  max-width: 20rem;
-}
-#members .cards-container .card-wrapper .card .image-container {
-  width: unset;
-  aspect-ratio: 5/7;
-  max-width: 45%;
-}
-#members .cards-container .card-wrapper .card .text-container .round-icon-container {
-  height: 1.5rem;
-  aspect-ratio: 1/1;
-  border: 1px solid rgb(0, 0, 0);
-}
-#members .cards-container .card-wrapper .card .social-icons-container a {
-  height: 1rem;
-  aspect-ratio: 1/1;
-  visibility: hidden;
-}
-#members .cards-container .card-wrapper .card:hover .social-icons-container a {
-  visibility: visible;
-}
-@media (min-width: 992px) {
-  #members .cards-container .card-wrapper {
-    aspect-ratio: 5/8;
-  }
-  #members .cards-container .card-wrapper .card .text-container .divider {
-    width: 1px;
-    background: black;
-  }
-  #members .cards-container .card-wrapper .card .social-icons-container a {
-    height: 1.3rem !important;
-  }
-  #members .cards-container .card-wrapper .card .image-container {
-    max-width: unset;
-    aspect-ratio: 6/7;
-    height: 70% !important;
-  }
-}
 #members .horizontal-row > span {
   height: 2px;
   background: beige;

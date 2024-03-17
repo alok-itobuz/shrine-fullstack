@@ -12,6 +12,11 @@ const eventSchema = mongoose.Schema({
     image: {
         type: String,
     },
+    keyPoints: [
+        {
+            type: String,
+        }
+    ],
     date: {
         startDate: {
             type: Date,
@@ -23,13 +28,27 @@ const eventSchema = mongoose.Schema({
         },
     },
     location: {
+        name: {
+            type: String
+        },
+        coords: {
+            type: [Number]
+        }
+    },
+    gallery: [{
         type: String
-    },
+    }],
     duration: {
-        type: Number
+        startTime: {
+            type: String,
+        },
+        endTime: {
+            type: String
+        }
     },
+
 })
 
-const Event = mongoose.model('Events', eventSchema)
+const Event = mongoose.model('Event', eventSchema)
 
 export default Event

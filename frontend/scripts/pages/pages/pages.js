@@ -1,5 +1,5 @@
 import { aboutusSection, heroSection, statsSection, visionSection } from "./sections/index.js";
-import { heroSectionData, statsSectionData, visionSectionData } from './sectionData.js'
+import { heroSectionData, visionSectionData } from './sectionData.js'
 
 export default (state) => {
     const main = document.querySelector("main");
@@ -7,7 +7,7 @@ export default (state) => {
 
     const elementArray = [
         heroSection(heroSectionData),
-        statsSection(statsSectionData),
+        statsSection(state.stats),
         visionSection(visionSectionData),
         aboutusSection()
     ];

@@ -10,27 +10,6 @@ export const heroSectionData = {
     }
 }
 
-export const statsSectionData = {
-    cards: [
-        {
-            title: '300+',
-            description: 'New volunteer'
-        },
-        {
-            title: '88+',
-            description: 'Church locations'
-        },
-        {
-            title: '$86M+',
-            description: 'Managed donations'
-        },
-        {
-            title: '480+',
-            description: 'New member'
-        },
-    ]
-}
-
 export const visionSectionData = {
     headingPrimary: 'walking together, growing in faith',
     descriptionPrimary: 'A long established fact that a reader will be distracted by the readable content of a page when looking.A long established fact that.A long.',

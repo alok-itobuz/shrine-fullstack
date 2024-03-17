@@ -1,6 +1,5 @@
 @use "./colors.scss" as color;
 
-
 // Hero Section
 #hero {
   background: #f6f2eb;
@@ -25,7 +24,7 @@
 
     &.btn-video {
       background-image: url(../images/hero/triangle.svg);
-      background-color: #C0304F;
+      background-color: #c0304f;
     }
   }
 
@@ -39,14 +38,14 @@
   }
 
   @media (min-width: 768px) {
-    >.container>.row {
+    > .container > .row {
       &:first-child {
         aspect-ratio: 10/7;
 
-        >div {
+        > div {
           height: 100% !important;
 
-          >div.energy-body-wrapper {
+          > div.energy-body-wrapper {
             height: 50% !important;
 
             .semi-circle {
@@ -100,14 +99,13 @@
         }
       }
     }
-
   }
 }
 
 // Introduction section
 #introduction {
   .row {
-    >.image-container {
+    > .image-container {
       .image {
         width: 45%;
 
@@ -159,7 +157,7 @@
       max-width: unset;
     }
 
-    >.image-container {
+    > .image-container {
       aspect-ratio: 3/4;
     }
   }
@@ -167,7 +165,7 @@
   .large-div {
     background: transparent;
 
-    >.image-container {
+    > .image-container {
       aspect-ratio: 1/1;
     }
   }
@@ -197,16 +195,15 @@
 }
 
 // grow section
-#grow>.row {
-  >.text-container {
-
-    >.btn-image-container .image-container {
+#grow > .row {
+  > .text-container {
+    > .btn-image-container .image-container {
       width: 40%;
       aspect-ratio: 4/5;
     }
   }
 
-  >.image-container {
+  > .image-container {
     aspect-ratio: 5/3;
 
     @media (min-width: 576px) {
@@ -221,68 +218,14 @@
 
 // members section
 #members {
-  .cards-container {
-    .card-wrapper {
-      aspect-ratio: 5/3;
-      max-width: 20rem;
-
-      .card {
-        .image-container {
-          width: unset;
-          aspect-ratio: 5/7;
-          max-width: 45%;
-        }
-
-        .text-container {
-          .round-icon-container {
-            height: 1.5rem;
-            aspect-ratio: 1/1;
-            border: 1px solid rgb(0, 0, 0);
-          }
-        }
-
-        .social-icons-container a {
-          height: 1rem;
-          aspect-ratio: 1/1;
-          visibility: hidden;
-        }
-
-        &:hover .social-icons-container a {
-          visibility: visible;
-        }
-      }
-
-      @media (min-width: 992px) {
-        aspect-ratio: 5/8;
-
-        .card {
-          .text-container .divider {
-            width: 1px;
-            background: black;
-          }
-
-          .social-icons-container a {
-            height: 1.3rem !important;
-          }
-
-          .image-container {
-            max-width: unset;
-            aspect-ratio: 6/7;
-            height: 70% !important;
-          }
-        }
-      }
-    }
-  }
-
   .horizontal-row {
-    >span {
+    > span {
       height: 2px;
       background: beige;
     }
   }
 
-  >img {
+  > img {
     height: 6rem;
     bottom: -3.5rem;
 
@@ -307,11 +250,11 @@
       .carousel-card {
         border: 1px solid black;
 
-        >.image-container {
+        > .image-container {
           background: #000;
         }
 
-        >.text-container {
+        > .text-container {
           .icon-row span {
             &:first-child {
               height: 1rem;
@@ -358,7 +301,7 @@
           border: 1px solid black;
           max-width: 18rem;
 
-          >div {
+          > div {
             height: 50%;
           }
 

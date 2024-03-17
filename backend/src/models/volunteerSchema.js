@@ -1,12 +1,9 @@
 import mongoose from "mongoose";
 
-const memberSchema = mongoose.Schema({
+const volunteerSchema = new mongoose.Schema({
     name: {
         type: String,
-        required: true
-    },
-    description: {
-        type: String,
+        required: [true, 'Amount is required.']
     },
     socialHandles: {
         instagram: {
@@ -16,8 +13,8 @@ const memberSchema = mongoose.Schema({
             type: String,
         },
         youtube: {
-            type: String,
-        },
+            type: String
+        }
     },
     joiningDate: {
         type: Date,
@@ -25,7 +22,6 @@ const memberSchema = mongoose.Schema({
     }
 })
 
-const Member = mongoose.model('Members', memberSchema)
+const Volunteer = mongoose.model('Volunteer', volunteerSchema)
 
-export default Member
-
+export default Volunteer

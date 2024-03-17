@@ -1,8 +1,6 @@
 import { API_URL } from "./constants.js";
 import { appendStyle } from "./helpers.js";
-import loadAboutPage from "./pages/about/about.js";
-import loadHomePage from "./pages/home/home.js";
-import { loadPagesPage } from "./pages/index.js";
+import { loadHomePage, loadPagesFaq, loadPagesPage } from "./pages/index.js";
 import state, { fetchAndStore } from './states.js'
 
 // fetch and update the state
@@ -10,6 +8,8 @@ import state, { fetchAndStore } from './states.js'
   await fetchAndStore(`${API_URL}/members`, 'members')
   await fetchAndStore(`${API_URL}/articles`, 'articles')
   await fetchAndStore(`${API_URL}/events`, 'events')
+  await fetchAndStore(`${API_URL}/alias/stats`, 'stats')
+  await fetchAndStore(`${API_URL}/faq`, 'faq')
   loadSectionData()
 })()
 
@@ -26,8 +26,13 @@ function loadSectionData(e) {
       loadHomePage(state);
       break;
     case 'pages':
+    case 'pages/about':
       appendStyle('pages.css')
       loadPagesPage(state)
+      break;
+    case 'pages/faq':
+      appendStyle('pagesFaq.css')
+      loadPagesFaq(state)
       break;
   }
 }

@@ -1,5 +1,4 @@
-import { membersCardGenerator } from "../../../components/home.js";
-import { sectionHeading } from "../../../components/main.js";
+import { membersCardGenerator, sectionHeading } from "../../../components/main.js";
 
 export default (sectionData, members) => {
     const { headingPrimary, descriptionPrimary } = sectionData
@@ -9,7 +8,7 @@ export default (sectionData, members) => {
         <img src="./images/members/poster0.svg" alt="top poster" class="position-absolute start-50 translate-middle-x">
         ${sectionHeading(headingPrimary, descriptionPrimary)}
         <div class="row m-0 p-0 mt-4 mt-lg-5 cards-container justify-content-center">
-            ${members?.map(membersCardGenerator).join("")}
+            ${members?.map((data) => membersCardGenerator(data, '5-7')).join("")}
         </div>
         <div class="horizontal-row d-flex align-items-center  gap-3 gap-md-5 ">
             <span class="flex-grow-1"></span>
