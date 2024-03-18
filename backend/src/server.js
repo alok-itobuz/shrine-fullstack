@@ -8,6 +8,7 @@ import cors from 'cors'
 import * as config from './config/constants.js'
 import aliasRouter from "./routes/aliasRoutes.js";
 import faqRouter from "./routes/faqRoutes.js";
+import galleryRouter from "./routes/galleryRoutes.js";
 
 
 const app = express()
@@ -22,6 +23,7 @@ app.use('/api/members', memberRouter)
 app.use('/api/events', eventRouter)
 app.use('/api/subscribe', subscribeRouter)
 app.use('/api/faq', faqRouter)
+app.use('/api/gallery', galleryRouter)
 
 app.listen(PORT, () => {
     console.log('server is listening at', PORT)
