@@ -10,38 +10,41 @@ import state, { fetchAndStore } from './states.js'
   await fetchAndStore(`${API_URL}/events`, 'events')
   await fetchAndStore(`${API_URL}/alias/stats`, 'stats')
   await fetchAndStore(`${API_URL}/faq`, 'faq')
+
   loadSectionData()
 })()
 
 const navContainer = document.querySelector('.navbar-container')
 
-function loadSectionData(e) {
+async function loadSectionData(e) {
   e?.preventDefault()
 
   navContainer.classList.remove('bg-yellowish')
 
   const main = document.querySelector("main");
   main.innerHTML = "";
-  switch (window.location.hash.slice(1)) {
-    case "":
+
+  const currentHash = window.location.hash.slice(1)
+  switch (true) {
+    case /^w{0}$/.test(currentHash):
       navContainer.classList.add('bg-yellowish')
       appendStyle('home.css')
       loadHomePage(state);
       break;
-    case 'pages':
-    case 'pages/about':
+    case /^pages$/.test(currentHash):
+    case /^pages\/about$/.test(currentHash):
       appendStyle('pages.css')
       loadPagesPage(state)
       break;
-    case 'pages/faq':
+    case /^pages\/faq$/.test(currentHash):
       appendStyle('pagesFaq.css')
       loadPagesFaq(state)
       break;
-    case 'pages/gallery':
-      appendStyle('pagesFaq.css')
-      loadPagesGallery(state)
+    case /^pages\/gallery.*$/.test(currentHash):
+      appendStyle('pagesGallery.css')
+      await loadPagesGallery(state)
       break;
-    case 'pages/members':
+    case /^pages\/members$/.test(currentHash):
       appendStyle('pagesFaq.css')
       loadPagesMember(state)
       break;

@@ -6,7 +6,7 @@ export const createCheckPoints = (content) => `
     </div>
 `
 
-export const sectionHeading = (heading, description = null, flexDirection = "row", mt = 0) => {
+export const sectionHeading = (heading, description = null, flexDirection = "row", margin) => {
     heading = heading.trim();
     description && (description = description.trim());
 
@@ -28,7 +28,7 @@ export const sectionHeading = (heading, description = null, flexDirection = "row
     return `
     ${!!description
             ? `
-    <div class="heading-container d-flex flex-column flex-sm-${flexDirection} ${flexDirection === 'row' ? 'align-items-sm-center' : ''} justify-content-between gap-3 gap-sm-5 mt-${mt}">
+    <div class="heading-container d-flex flex-column flex-sm-${flexDirection} ${flexDirection === 'row' ? 'align-items-sm-center' : ''} justify-content-between gap-3 gap-sm-5 ${margin}">
         <h2 class="section-heading fs-xl font-roboto flex-sm-grow-1 m-0">
             ${heading}
         </h2>
@@ -60,10 +60,10 @@ export const shrineCardGenerator = ({ url, alt, title, description, btnContent }
 `
 
 
-export const membersCardGenerator = ({ name, description, image, socialLinks: { instagram, google, youtube } }, aspectRatio) => `
+export const membersCardGenerator = ({ name, description, image, socialLinks: { instagram, google, youtube } }, aspectRatio, isRectangleCircle = true) => `
     <div class="members-card-wrapper col-12 col-sm-6 col-lg-3 p-2 p-lg-1">
         <div class="card h-100 w-100 d-flex flex-row flex-lg-column align-items-lg-center border-0 p-2 gap-2">
-            <div class="image-container rectangle-circle aspect-${aspectRatio} h-100 overflow-hidden">
+            <div class="image-container ${isRectangleCircle ? 'rectangle-circle' : ''} aspect-${aspectRatio} h-100 overflow-hidden">
                 <img src=${image} alt=${name} class="h-100 w-100 object-fit-cover object-center">
             </div>
             <div class="text-container d-flex flex-column flex-lg-row align-items-start align-items-lg-center justify-content-center justify-content-lg-start gap-2 mt-lg-2">

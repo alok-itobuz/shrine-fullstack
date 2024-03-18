@@ -6,7 +6,7 @@ export default (sectionData) => {
     return `
         <section id="hero" class="section-text-image container pb-5">
             ${wideCarouselGenerator(images)}
-            ${sectionHeading(headingPrimary, descriptionPrimary, 'column', 5)}
+            ${sectionHeading(headingPrimary, descriptionPrimary, 'column', 'mt-5')}
         </section>
     `
 }

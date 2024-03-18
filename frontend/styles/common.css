@@ -11,11 +11,18 @@ body {
   overflow-x: hidden;
 }
 
+.breadcrumb-container {
+  z-index: 100;
+}
 @media (min-width: 992px) {
   .breadcrumb-container {
     position: absolute !important;
     transform: translateX(-50%);
   }
+}
+
+.dropdown {
+  z-index: 100;
 }
 
 .dropdown-toggle::after {
@@ -278,6 +285,12 @@ img.object-center {
 
 .aspect-1-1 {
   aspect-ratio: 1/1 !important;
+}
+
+@media (min-width: 576px) {
+  .aspect-sm-none {
+    aspect-ratio: unset !important;
+  }
 }
 
 .members-card-wrapper {

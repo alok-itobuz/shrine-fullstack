@@ -1,0 +1,15 @@
+.hero-image-container > div {
+  max-width: 20rem;
+}
+@media (min-width: 576px) {
+  .hero-image-container {
+    aspect-ratio: 3/1;
+  }
+  .hero-image-container > div {
+    max-width: unset;
+  }
+}
+
+#gallery .nav-tabs .nav-link.active {
+  border-bottom: 2px solid red !important;
+}/*# sourceMappingURL=pagesGallery.css.map */

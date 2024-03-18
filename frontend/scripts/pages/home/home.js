@@ -21,7 +21,6 @@ import {
   satisfactionSection,
 } from "./sections/index.js";
 import { API_URL } from "../../constants.js";
-import { clearMain } from "../../helpers.js";
 
 export default (state) => {
   const main = document.querySelector("main");
