@@ -1,6 +1,6 @@
 import { API_URL } from "./constants.js";
 import { appendStyle } from "./helpers.js";
-import { loadHomePage, loadPagesFaq, loadPagesGallery, loadPagesMember, loadPagesPage } from "./pages/index.js";
+import { loadHomePage, loadPagesEvents, loadPagesFaq, loadPagesGallery, loadPagesMember, loadPagesPage, loadPagesSingleEvents, loadPagesVideo } from "./pages/index.js";
 import state, { fetchAndStore } from './states.js'
 
 // fetch and update the state
@@ -45,8 +45,20 @@ async function loadSectionData(e) {
       await loadPagesGallery(state)
       break;
     case /^pages\/members$/.test(currentHash):
-      appendStyle('pagesFaq.css')
       loadPagesMember(state)
+      break;
+    case /^pages\/video$/.test(currentHash):
+      // appendStyle('pagesFaq.css')
+      loadPagesVideo(state)
+      break;
+    case /^pages\/events$/.test(currentHash):
+    case /^pages\/events\/$/.test(currentHash):
+      appendStyle('pagesEvents.css')
+      loadPagesEvents(state)
+      break;
+    case /^pages\/events\/.*$/.test(currentHash):
+      // appendStyle('pagesFaq.css')
+      loadPagesSingleEvents(state)
       break;
   }
 }

@@ -2,7 +2,6 @@ import { statsCardsGenerator } from "../../../components/pages.js"
 
 
 export default (data) => {
-    console.log(data)
     const cards = [
         {
             title: `${data.newMembers}+`,

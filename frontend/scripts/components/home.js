@@ -1,4 +1,4 @@
-import { shrineCardGenerator, blackWhiteCardTextsGenerator } from './main.js'
+import { shrineCardGenerator } from './main.js'
 
 // Introduction section
 export const introCardsGenerator = ({ heading, paragraph, url, alt }) => {
@@ -40,37 +40,6 @@ export const satisfactionCardGenerator = (data) => `
     </div>
 `
 
-// events section
-export const eventCardHorizontalsGenerator = ({ image, date: { startDate, endDate }, location: { name: locationName }, duration: { startTime, endTime }, name, description }) => `
-    <div class="carousel-card-wrapper m-0 p-2 px-sm-5 col-12 col-sm-8">
-        <div class="carousel-card h-100 row m-0 rounded-2 overflow-hidden ">
-            <div class="image-container h-100 col-4 overflow-hidden p-0">
-                <img src=${image} alt=${name} class="h-100 w-100 object-fit-cover object-center d-flex align-items-center justify-content-center ">
-            </div>
-            <div class="text-container p-2 ps-md-4 col-8 d-flex flex-column align-items-start gap-2 justify-content-around">
-                <div class="calender icon-row d-flex align-items-center justify-content-start gap-2">
-                    <span class="overflow-hidden">
-                        <img src="./images/events/calendar.svg" alt="calender icon" class="h-100 w-100 object-fit-contain object-center  d-flex align-items-center justify-content-center ">
-                    </span>
-                    <span class="fs-small">${startDate}-${endDate}</span>
-                </div>
-                <div class="calender icon-row d-flex align-items-center justify-content-start gap-2">
-                    <span class="overflow-hidden">
-                        <img src="./images/events/location.svg" alt="location icon" class="h-100 w-100 object-fit-contain object-center d-flex align-items-center justify-content-center ">
-                    </span>
-                    <span class="fs-small">${locationName}</span>
-                </div>
-                <div class="calender icon-row d-flex align-items-center justify-content-start gap-2">
-                    <span class="overflow-hidden">
-                        <img src="./images/events/clock.svg" alt="clock icon" class="h-100 w-100 object-fit-contain object-center d-flex align-items-center justify-content-center ">
-                    </span>
-                    <span class="fs-small">${startTime}-${endTime}</span>
-                </div>
-                ${blackWhiteCardTextsGenerator(name, description, 'join now')}
-            </div>
-        </div>
-    </div>
-`
 
 // articles section
 export const articlesCardGenerator = ({ title, description, image, duration }) => `

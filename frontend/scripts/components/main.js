@@ -6,7 +6,7 @@ export const createCheckPoints = (content) => `
     </div>
 `
 
-export const sectionHeading = (heading, description = null, flexDirection = "row", margin) => {
+export const sectionHeading = (heading, description = null, flexDirection = "row", margin = 'mt-4') => {
     heading = heading.trim();
     description && (description = description.trim());
 
@@ -43,10 +43,10 @@ export const sectionHeading = (heading, description = null, flexDirection = "row
     `;
 };
 
-export const shrineCardGenerator = ({ url, alt, title, description, btnContent }, imgRunded = false) => `
+export const shrineCardGenerator = ({ url, alt, title, description, btnContent }, imgRounded = false) => `
     <div class="h-100 w-100 p-2 p-md-3 shrine-card d-flex flex-column gap-3 justify-content-center align-items-center">
-        <div class="image-container h-25 d-flex align-items-center justify-content-center ${imgRunded ? 'rounded-circle bg-white' : ''}">
-            <img src=${url} alt=${alt} class="h-${imgRunded ? 50 : 100} w-${imgRunded ? 50 : 100} object-fit-cover object-center">
+        <div class="image-container h-25 d-flex align-items-center justify-content-center ${imgRounded ? 'rounded-circle bg-white' : ''}">
+            <img src=${url} alt=${alt} class="h-${imgRounded ? 50 : 100} w-${imgRounded ? 50 : 100} object-fit-cover object-center">
         </div>
         <h3 class="fs-large m-0 text-capitalize font-roboto fw-semibold">${title}</h3>
         <span class="fs-small text-center">${description}</span>
@@ -91,11 +91,6 @@ export const membersCardGenerator = ({ name, description, image, socialLinks: { 
     </div>
 `
 
-export const blackWhiteCardTextsGenerator = (name, description, btnContent) => `
-    <h3 class="fw-semibold fs-large m-0 font-roboto">${name}</h3>
-    <p class="m-0 fs-small">${description}</p>
-    <button class="m-0 p-0 rounded-2 text-uppercase fs-small px-3 py-2 border-0 text-white  hover-cuursor-pointer  btn-square mt-sm-2">${btnContent}</button>
-`
 
 export const wideCarouselGenerator = (images) => `
     <div class="wide-carousel carousel-btn-container position-relative">
@@ -111,6 +106,44 @@ export const wideCarouselGenerator = (images) => `
         <div class="buttons-container d-flex flex-column align-items-center justify-content-center gap-0 position-absolute end-0 top-50 translate-middle-y">
             <button class="btn-prev border-0 bg-deep-pink text-white">&lt;</button>
             <button class="btn-next border-0 bg-black text-white">&gt;</button>
+        </div>
+    </div>
+`
+
+
+export const blackWhiteCardTextsGenerator = (name, description, btnContent, href) => `
+    <h3 class="fw-semibold fs-large m-0 font-roboto">${name}</h3>
+    <p class="m-0 fs-small">${description}</p>
+    <a href=${href} class="m-0 p-0 rounded-2 text-uppercase fs-small px-3 py-2 border-0 text-white  hover-cuursor-pointer  btn-square mt-sm-2 text-decoration-none">${btnContent}</a>
+`
+
+export const primaryCardGenerator = ({ image, date: { startDate, endDate }, location: { name: locationName }, duration: { startTime, endTime }, name, description }, alignment = 'v', wrapperCol = 'col-12 col-sm-6', p = 'p-2 px-sm-5', href) => `
+    <div class="carousel-card-wrapper ${alignment === 'h' ? '' : 'aspect-5-7'} m-0 ${p} ${wrapperCol}">
+        <div class="carousel-card h-100 row m-0 rounded-2 overflow-hidden border border-2 boder-black">
+            <div class="image-container ${alignment === 'h' ? 'h-100 col-4' : 'h-50 col-12'} overflow-hidden p-0">
+                <img src=${image} alt=${name} class="h-100 w-100 object-fit-cover object-center d-flex align-items-center justify-content-center ">
+            </div>
+            <div class="text-container p-2 ps-md-4  ${alignment === 'h' ? 'col-8' : 'h-50 col-12'} d-flex flex-column align-items-start gap-2 justify-content-around">
+                <div class="calender icon-row d-flex align-items-center justify-content-start gap-2">
+                    <span class="overflow-hidden">
+                        <img src="./images/events/calendar.svg" alt="calender icon" class="h-100 w-100 object-fit-contain object-center  d-flex align-items-center justify-content-center ">
+                    </span>
+                    <span class="fs-small">${startDate}-${endDate}</span>
+                </div>
+                <div class="calender icon-row d-flex align-items-center justify-content-start gap-2">
+                    <span class="overflow-hidden">
+                        <img src="./images/events/location.svg" alt="location icon" class="h-100 w-100 object-fit-contain object-center d-flex align-items-center justify-content-center ">
+                    </span>
+                    <span class="fs-small">${locationName}</span>
+                </div>
+                <div class="calender icon-row d-flex align-items-center justify-content-start gap-2">
+                    <span class="overflow-hidden">
+                        <img src="./images/events/clock.svg" alt="clock icon" class="h-100 w-100 object-fit-contain object-center d-flex align-items-center justify-content-center ">
+                    </span>
+                    <span class="fs-small">${startTime}-${endTime}</span>
+                </div>
+                ${blackWhiteCardTextsGenerator(name, description, 'join now', href)}
+            </div>
         </div>
     </div>
 `

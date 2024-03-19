@@ -8,9 +8,8 @@ export default async (state) => {
 
     const currentGalleryItem = window.location.hash.split('/')
     let activeLink = 'all';
-    if (currentGalleryItem.length === 2 || currentGalleryItem.at(-1) === '')
-        activeLink = 0
-    else activeLink = currentGalleryItem.at(-1)
+    if (!(currentGalleryItem.length === 2 || currentGalleryItem.at(-1) === ''))
+        activeLink = currentGalleryItem.at(-1)
 
     await fetchAndStore(`${API_URL}/gallery/${activeLink}`, 'gallery')
 
